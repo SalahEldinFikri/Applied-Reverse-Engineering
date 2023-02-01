@@ -42,3 +42,8 @@ These flags are the N, Z, C, and V flags:
 - Z for zero, is set when the result is zero.
 - C stands for carry and is set when the instruction results in a carry out.
 - V stands for overflow and is set when an overflow occurs.
+
+
+# Stack
+## What is the stack?
+In general, a stack is a contiguous array of memory. It’s also sometimes referred to as a structure based on the last-in-first-out principle (LIFO). A contiguous array is simply a sequence of objects in a linear structure format, accessible one after the other. This stack structure is bounded at the bottom meaning that all the operations performed are performed on the top.
