@@ -1,5 +1,5 @@
 # Compilation Process in c
-# The Compilation Process
+## The Compilation Process
 The compilation process in C transforms a human-readable code into a machine-readable format. For C programming language, it happens before a program starts executing to check the syntax and semantics of the code. The compilation process in C involves four steps: pre-processing, compiling, assembling, and linking then, we run the obtained executable file to get an output on the screen.
 ![image](https://user-images.githubusercontent.com/71356170/215872181-1b360ca8-529e-474a-a842-8937c294192e.png)
 
