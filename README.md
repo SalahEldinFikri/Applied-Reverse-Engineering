@@ -45,5 +45,34 @@ These flags are the N, Z, C, and V flags:
 
 
 # Stack
-## What is the stack?
-In general, a stack is a contiguous array of memory. It’s also sometimes referred to as a structure based on the last-in-first-out principle (LIFO). A contiguous array is simply a sequence of objects in a linear structure format, accessible one after the other. This stack structure is bounded at the bottom meaning that all the operations performed are performed on the top.
+To understand this concept of stack we need to understand the memory organization of computer. So any process of program which is loaded in to the memory of the computer is not loaded randomly it has some precise area dedicated in memory for its operations. For example, global hard code which is written for the program is resides at particular location and environmental variables have different location it memory lay out.
+
+I won’t dive in to detail of memory lay out here instead I will try to explain a very simple overview of the memory layout here as per below image.
+
+![image](https://user-images.githubusercontent.com/71356170/216231285-6f279d3f-c982-4422-a630-aa215dc546b7.png)
+
+
+So as you can see in figure 1 lower memory region of the program contains DATA section and HEAP section, while upper or higher memory region contains KERNEL and STACK section, Now let’s take a look of these each section briefly (stack in detail of course….. -_- )
+
+DATA: Also know and text section and code section where the actual text is copied in to the memory. It contains the all logic and the instruction for the code. It’s placed below heap to protect it from over-writing.
+
+HEAP: Heap is a segment where the dynamic allocation of the memory take place. This region is managed by functions like malloc(),alloc() & free(). Its grows upward i.e. from lower memory to higher memory.
+
+KERNEL: Now this area dedicated to the kernel of the operating system where command line arguments, thread and processes resides.
+
+Now, after seeing this we know where exactly the stack is in the memory. Stack resides just below kernel segment and above the free area and stack always grow downward towards heap. Keep this in mind, stack always written from higher memory to lower memory
+
+To write this computer take help of two 64-bit register BSS (Base Stack Segment) & RSP (Stack Pointer Register) in more precise way we can say that BSS manages the RSP. Two important instructions are use to manipulate stack are PUSH and POP. PUSH is use to put data in to the stack and POP is use to retrieve data from the stack.
+
+Here we need to understand that last pushed values are always top of the stack like demonstrated in below image.
+
+![image](https://user-images.githubusercontent.com/71356170/216231322-f879e461-2af8-4b1b-831f-688ac408ab64.png)
+
+
+Here we have two instructions
+
+PUSH 44
+
+PUSH 88
+
+First push will put data 44 on the top of the stack at this time RSP is pointing at the highest location of the stack let say it’s just RSP+0 I have called it RSP, now as second push instruction is executed it put data 88 on the top of the stack and now is decremented by 8 bytes and new RSP will point at the RSP+8 which is now the top of the stack, here you can see stack is growing downwards and last pushed value is at top of the stack.
