@@ -76,3 +76,22 @@ PUSH 44
 PUSH 88
 
 First push will put data 44 on the top of the stack at this time RSP is pointing at the highest location of the stack let say it’s just RSP+0 I have called it RSP, now as second push instruction is executed it put data 88 on the top of the stack and now is decremented by 8 bytes and new RSP will point at the RSP+8 which is now the top of the stack, here you can see stack is growing downwards and last pushed value is at top of the stack.
+
+
+# Exceptions And Interrupts
+
+An exception is a problem that arises during the execution of a program. A C++ exception is a response to an exceptional circumstance that arises while a program is running, such as an attempt to divide by zero.
+
+Exceptions provide a way to transfer control from one part of a program to another. C++ exception handling is built upon three keywords: try, catch, and throw.
+
+throw − A program throws an exception when a problem shows up. This is done using a throw keyword.
+
+catch − A program catches an exception with an exception handler at the place in a program where you want to handle the problem. The catch keyword indicates the catching of an exception.
+
+try − A try block identifies a block of code for which particular exceptions will be activated. It's followed by one or more catch blocks.
+
+Assuming a block will raise an exception, a method catches an exception using a combination of the try and catch keywords. A try/catch block is placed around the code that might generate an exception. Code within a try/catch block is referred to as protected code, and the syntax for using try/catch as follows −
+
+![image](https://user-images.githubusercontent.com/71356170/217266376-841653c5-dada-49ca-a8a8-863b86ffcb37.png)
+
+You can list down multiple catch statements to catch different type of exceptions in case your try block raises more than one exception in different situations.
