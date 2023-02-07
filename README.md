@@ -95,3 +95,13 @@ Assuming a block will raise an exception, a method catches an exception using a 
 ![image](https://user-images.githubusercontent.com/71356170/217266376-841653c5-dada-49ca-a8a8-863b86ffcb37.png)
 
 You can list down multiple catch statements to catch different type of exceptions in case your try block raises more than one exception in different situations.
+
+#  Interrupts
+The interrupt is a signal emitted by hardware or software when a process or an event needs immediate attention. It alerts the processor to a high-priority process requiring interruption of the current working process. In I/O devices one of the bus control lines is dedicated for this purpose and is called the Interrupt Service Routine (ISR). 
+
+When a device raises an interrupt at let’s say process i, the processor first completes the execution of instruction i. Then it loads the Program Counter (PC) with the address of the first instruction of the ISR. Before loading the Program Counter with the address, the address of the interrupted instruction is moved to a temporary location. Therefore, after handling the interrupt the processor can continue with process i+1. 
+
+While the processor is handling the interrupts, it must inform the device that its request has been recognized so that it stops sending the interrupt request signal. Also, saving the registers so that the interrupted process can be restored in the future, increases the delay between the time an interrupt is received and the start of the execution of the ISR. This is called Interrupt Latency. 
+
+## Software Interrupts:
+A sort of interrupt called a software interrupt is one that is produced by software or a system as opposed to hardware. Traps and exceptions are other names for software interruptions. They serve as a signal for the operating system or a system service to carry out a certain function or respond to an error condition.
